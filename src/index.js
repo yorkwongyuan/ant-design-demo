@@ -8,6 +8,15 @@ const app = dva({
             name: 'dva', id: '1'
         },{
             name: 'dva1', id: '2'
+        }],
+        param:[{
+            name: '123', id: '1', key: '1'
+        },{
+            name: '123', id: '2', key: '2'
+        },{
+            name: '123', id: '3', key: '3'
+        },{
+            name: '123', id: '4', key: '4'
         }]
     }
 });
@@ -22,6 +31,7 @@ const app = dva({
 app.router(require('./router').default);
 
 app.model(require('./models/products').default);
+app.model(require('./models/param').default);
 
 // 5. Start
 app.start('#root');
