@@ -24,7 +24,6 @@ export default class App extends Component {
         console.log('click', e);
     }
     componentDidMount() {
-        console.log(this.props,'props')
     }
     render() {
         const subListsParent = (children) => <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />Navigation Three - Submenu</span>}>{children}</SubMenu>;
@@ -44,12 +43,10 @@ export default class App extends Component {
         );
         return (
             <div>
-              
-            <Menu onClick={this.props.onClick} mode="horizontal" selectedKeys={[this.state.current]}>
-                {lists}
-                {subListsParent(sublists)}
-            </Menu>
-                <div>{this.props.menu[0].title}</div>
+                <Menu onClick={this.props.onClick} mode="horizontal" selectedKeys={[this.state.current]}>
+                    {lists}
+                    {subListsParent(sublists)}
+                </Menu>
             </div>
         )
     }

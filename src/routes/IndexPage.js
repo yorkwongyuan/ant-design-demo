@@ -1,21 +1,31 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
+import { Layout } from 'antd';
+import HeaderContent from './Header'
+import SiderContent from './Sider';
 
-function IndexPage() {
-  return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to dva!</h1>
-      <div className={styles.welcome} />
-      <ul className={styles.list}>
-        <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
-        <li><a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">Getting Started</a></li>
-      </ul>
-    </div>
-  );
+const { Header, Footer, Sider, Content } = Layout;
+
+class IndexPage extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <div className="logo"/>
+        <Header>
+          <HeaderContent />
+        </Header>
+        <Layout>
+          <Sider>
+            <SiderContent />
+          </Sider>
+          <Content>content</Content>
+        </Layout>
+        <Footer>Footer</Footer>
+      </Layout>
+    )
+  }
 }
 
-IndexPage.propTypes = {
-};
 
 export default connect()(IndexPage);

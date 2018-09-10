@@ -8,7 +8,7 @@ import Menu from './routes/Menu';
 function RouterConfig({ history }) {
   return (
     <Router history={history}>
-      <Switch>
+      <Switch>   
         <Route path="/" exact component={IndexPage} />
         <Route path="/products" component = {Products} exact/>
         <Route path="/list" component = {List} exact/>
