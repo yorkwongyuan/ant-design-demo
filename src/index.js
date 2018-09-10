@@ -17,7 +17,8 @@ const app = dva({
             name: '123', id: '3', key: '3'
         },{
             name: '123', id: '4', key: '4'
-        }]
+        }],
+        menu:[{title:'fuck'}]
     }
 });
 
@@ -32,6 +33,7 @@ app.router(require('./router').default);
 
 app.model(require('./models/products').default);
 app.model(require('./models/param').default);
+app.model(require('./models/menu').default);
 
 // 5. Start
 app.start('#root');
